@@ -1,0 +1,121 @@
+/* Tiny reset thingy */
+html {
+  --primary-background: #efb71d;
+  --secondary-background: #00a4e1;
+  --accent-background: #f16881;
+  --text: rgba(0,0,0,0.88);
+  /* font sizes */
+  --title-size: 6rem;
+  --heading-size: 5rem;
+  --regular-size: 3rem;
+  /* spacing */
+  --slide-padding: 4rem;
+  --title-padding: 1rem;
+  --item-margin: 1rem;
+}
+
+body {
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+}
+
+.wrapper {
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+  /* Set the perspective to 2px. This is essentailly the simulated distance from the viewport to transformed objects.*/
+  perspective: 2px;
+}
+
+.section {
+  position: relative;
+  height: 100vh;
+  
+  /* For text formatting. */
+  display: flex;
+  /* align-items: center; */
+  /* justify-content: center; */
+  color: var(--text);
+  padding: var(--slide-padding);
+  font-size: var(--regular-size);
+}
+
+.slide-content li{
+  margin-bottom: var(--item-margin);
+}
+
+.parallax::after {
+  /* Display and position the pseudo-element */
+  content: " ";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  
+  /* Move the pseudo-element back away from the camera,
+   * then scale it back up to fill the viewport.
+   * Because the pseudo-element is further away, it appears to move more slowly, like in real life. */
+  transform: translateZ(-1px) scale(1.5);
+  /* Force the background image to fill the whole element. */
+  background-size: 100%;
+  /* Keep the image from overlapping sibling elements. */ 
+  z-index: -1;
+}
+
+/* The styling for the static div. */
+.static-primary {
+  background: var(--primary-background);
+}
+
+.static-secondary {
+  background: var(--secondary-background);
+}
+
+/* Sets the actual background images to adorable kitties. This part is crucial. */
+.bg-techn::after {
+  background-image: url('assets/home_1.jpeg');
+}
+
+.bg-html::after {
+  background-image: url('assets/colgroup.jpg');
+}
+
+.bg-firstweb::after {
+  background-image: url('assets/firstbrowser.gif');
+}
+
+.bg-browserhist::after {
+  background-image: url('assets/browsermapcomputerhistory.jpg');
+}
+
+.bg-modernbr::after {
+  background-image: url('assets/browsersupport.jpg');
+}
+
+.bg-css::after {
+  background-image: url('assets/cssisawesome.jpg');
+}
+
+.bg5::after {
+  background-image: url('assets/javascript.jpg');
+}
+
+/* Typography --------------- */
+.title {
+  font-size: var(--title-size);
+}
+
+.heading {
+  font-size: var(--heading-size);
+  font-family: 'Alegreya Sans';
+}
+
+.title-bg {
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: var(--title-padding);
+}
