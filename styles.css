@@ -1,11 +1,10 @@
-/* Tiny reset thingy */
 html {
   --primary-background: #efb71d;
   --secondary-background: #00a4e1;
   --accent-background: #f16881;
   --text: rgba(0,0,0,0.88);
   /* font sizes */
-  --title-size: 6rem;
+  --title-size: 8rem;
   --heading-size: 5rem;
   --regular-size: 3rem;
   /* spacing */
@@ -27,18 +26,13 @@ body, html {
   height: 100vh;
   overflow-x: hidden;
   overflow-y: auto;
-  /* Set the perspective to 2px. This is essentailly the simulated distance from the viewport to transformed objects.*/
   perspective: 2px;
 }
 
 .section {
   position: relative;
   height: 100vh;
-  
-  /* For text formatting. */
   display: flex;
-  /* align-items: center; */
-  /* justify-content: center; */
   color: var(--text);
   padding: var(--slide-padding);
   font-size: var(--regular-size);
@@ -49,7 +43,6 @@ body, html {
 }
 
 .parallax::after {
-  /* Display and position the pseudo-element */
   content: " ";
   position: absolute;
   top: 0;
@@ -57,17 +50,12 @@ body, html {
   bottom: 0;
   left: 0;
   
-  /* Move the pseudo-element back away from the camera,
-   * then scale it back up to fill the viewport.
-   * Because the pseudo-element is further away, it appears to move more slowly, like in real life. */
+
   transform: translateZ(-1px) scale(1.5);
-  /* Force the background image to fill the whole element. */
   background-size: 100%;
-  /* Keep the image from overlapping sibling elements. */ 
   z-index: -1;
 }
 
-/* The styling for the static div. */
 .static-primary {
   background: var(--primary-background);
 }
@@ -76,13 +64,16 @@ body, html {
   background: var(--secondary-background);
 }
 
-/* Sets the actual background images to adorable kitties. This part is crucial. */
+.bg-iejoke::after {
+  background-image: url('assets/ie_joke.jpg');
+}
+
 .bg-techn::after {
   background-image: url('assets/home_1.jpeg');
 }
 
-.bg-html::after {
-  background-image: url('assets/colgroup.jpg');
+.bg-components::after {
+  background-image: url('assets/ui_elements.png');
 }
 
 .bg-firstweb::after {
@@ -93,16 +84,36 @@ body, html {
   background-image: url('assets/browsermapcomputerhistory.jpg');
 }
 
-.bg-modernbr::after {
-  background-image: url('assets/browsersupport.jpg');
-}
-
 .bg-css::after {
   background-image: url('assets/cssisawesome.jpg');
 }
 
-.bg5::after {
-  background-image: url('assets/javascript.jpg');
+.bg-wired::after {
+  background-image: url('assets/css-wired.gif');
+}
+
+.bg-devices::after {
+  background-image: url('assets/devices.jpg');
+}
+
+.bg-webapp::after {
+  background-image: url('assets/web_app_website.png');
+}
+
+.bg-md::after {
+  background-image: url('assets/md.png');
+}
+
+.bg-componentlib::after {
+  background-image: url('assets/components.png');
+}
+
+.bg-noidea::after {
+  background-image: url('assets/noidea.jpg');
+}
+
+.bg-ninja::after {
+  background-image: url('assets/code-ninja.jpg');
 }
 
 /* Typography --------------- */
